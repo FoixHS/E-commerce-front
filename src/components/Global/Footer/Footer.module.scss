@@ -125,5 +125,15 @@
             padding-left: 15%;
             width: 40%;
         }
+
+        &__copy {
+            &__container {
+                &__a {
+                    &__img {
+                        width: 30%;
+                    }
+                }
+            }
+        }
     }
 }
