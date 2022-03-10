@@ -114,26 +114,4 @@
             width: 90%;
         }
     }
-
-    @include breakpoint(xl) {
-        &__social {
-            padding-left: 5%;
-            width: 20%;
-        }
-
-        &__info {
-            padding-left: 15%;
-            width: 40%;
-        }
-
-        &__copy {
-            &__container {
-                &__a {
-                    &__img {
-                        width: 30%;
-                    }
-                }
-            }
-        }
-    }
 }
