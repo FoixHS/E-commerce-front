@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import ProductsList from '.';
+import ProductsList from './index';
 import Image from '../../../assets/images/placeholder/default.png';
 
 export default {
