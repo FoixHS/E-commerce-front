@@ -1,7 +1,7 @@
 import React from 'react';
 
 /* Components */
-import ProductList from '../components/Products/ProductsList/index';
+import ProductList from '../components/Products/ProductsList';
 
 function HomePage() {
   return (
