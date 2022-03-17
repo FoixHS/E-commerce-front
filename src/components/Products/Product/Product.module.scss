@@ -1,0 +1,71 @@
+@import "./../../../assets/styles/variables.scss";
+
+.product {
+    margin: 0 auto;
+    padding: 20px 30px;
+    width: 90%;
+    font-family: $poppins-font;
+    border: solid 2px $black;
+    border-radius: $border-radius;
+    background-color: $white;
+    box-shadow: -10px 10px 8px -2px rgba(120,120,120,0.75);
+    -webkit-box-shadow: -10px 10px 8px -2px rgba(120,120,120,0.75);
+    -moz-box-shadow: -10px 10px 8px -2px rgba(120,120,120,0.75);
+    transition: transform 0.5s;
+
+    @include breakpoint(md) {
+        width: 75%;
+    }
+
+    .product_image_container {
+        width: 100%;
+    }
+
+    .product_image {
+        width:100%;
+        border-radius: $border-radius;
+        border: solid 1px #646464;
+    }
+
+    .product_name {
+        margin: 0;
+        font-weight: 500;
+        font-size: 30px;
+    }   
+
+    .product_button {
+        width: 100%;
+        padding: 0 auto;
+        margin: 0 auto;
+        background-color: $royal-blue;
+        color: $black;
+        height: 30px;
+        border-radius: $border-radius;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+    .product_button:hover {
+        background-color: $persian-blue;
+        color: $white;
+    }
+    
+
+    @include breakpoint(md) {
+        .product_button{
+            font-size: 12px;
+        }
+    }
+
+    @include breakpoint(xl) {
+        .product_button{
+            font-size: 14px;
+        }
+    }
+}
+
+.product:hover {
+    transform: scale(1.03);
+}
