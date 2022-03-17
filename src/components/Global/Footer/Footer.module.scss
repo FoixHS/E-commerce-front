@@ -1,0 +1,109 @@
+@import './../../../assets/styles/variables.scss';
+
+.footer {
+    background-color: $black;
+    font-family: $poppins-font;
+    font-size: 12px;
+    color: $white;
+    height: auto;
+    padding: 5% 10%;
+    display: grid;
+    grid-template-rows: auto auto auto;
+
+    &__social {
+        width: 100%;
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items:center;
+        flex-direction: row;
+        margin-bottom: 5%;
+    }
+
+    .social_media {
+        display: inline-block;
+        padding: 5px 5px;
+    }
+
+    .social_link {
+        text-decoration: none;
+        color: $white;
+    }
+
+    .social_link:hover {
+        color: $royal-blue;
+    }
+
+    &__info {
+        width: 100%;
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: space-around;
+    }
+
+    .information {
+        display: flex;
+        padding-right: 15px;
+    }
+
+    &__copy {
+        width: 100%;
+        display: flex;
+        align-content: space-between;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .logo_link {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo_image {
+        width: 40%;
+    }
+
+    .copyright_text {
+        display: block;
+        margin: auto;
+    }
+
+    @include breakpoint(sm) {
+        font-size: 8px;
+        grid-template-columns: 25% 40% 25%;
+        justify-content:space-between;
+
+        &__social {
+            margin: 0;
+        }
+
+        .logo_image {
+            width: 60%;
+        }
+    }
+
+    @include breakpoint(md) {
+        font-size: 12px;
+    }
+
+    @include breakpoint(lg) {
+        font-size: 14px;
+        padding: 3% 10%;
+        .logo_image {
+            width: 55%;
+        }
+    }
+
+    @include breakpoint(xl) {
+        padding: 2% 10%;
+        font-size: 15px;
+        grid-template-columns: 20% 35% 20%;
+
+        .logo_image {
+            width: 50%;
+        }
+    }
+}
