@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { MdSearchOff } from 'react-icons/md';
 import { ToastContainer } from 'react-toastify';
