@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Navbar.module.scss';
 import Logo from '../../../assets/images/logo/logo.svg';
+import LoggedOutNavbarItems from './LoggedOutNavbarItems';
 
 function Navbar() {
   return (
@@ -11,6 +12,7 @@ function Navbar() {
             <img className={styles.logo_img} src={Logo} alt="dh-logo" />
           </a>
         </div>
+        <LoggedOutNavbarItems />
       </div>
     </header>
   );

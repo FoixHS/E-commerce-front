@@ -45,13 +45,11 @@
         margin-top: 20px;
         z-index: 100;
         cursor: pointer;
-        border: solid 2px $black;
     }
 
     .product_button:hover {
         background-color: $persian-blue;
         color: $black;
-        border: solid 3px $san-marino;
     }
 
     @include breakpoint(sm) {

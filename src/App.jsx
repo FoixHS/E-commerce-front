@@ -9,14 +9,17 @@ import {
 import HomePage from './pages/HomePage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import NotFoundPage from './pages/NotFoundPage';
+import LogInPage from './pages/LogInPage';
+import RegisterPage from './pages/RegisterPage';
+
 import Navbar from './components/Global/Navbar';
 import Footer from './components/Global/Footer';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <Router>
+        <Navbar />
         <Switch>
           <Route path="/products/:id">
             <ProductDetailPage />
@@ -26,6 +29,12 @@ function App() {
           </Route>
           <Route path="/products?">
             <HomePage />
+          </Route>
+          <Route path="/login">
+            <LogInPage />
+          </Route>
+          <Route path="/register">
+            <RegisterPage />
           </Route>
           <Route>
             <NotFoundPage />
