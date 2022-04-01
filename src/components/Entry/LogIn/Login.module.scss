@@ -1,6 +1,6 @@
 @import '../../../assets/styles/variables.scss';
 
-.register_container {
+.login_container {
     width: 70%;
     min-height: 100%;
     display: flex;
@@ -13,7 +13,8 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    align-items: center;;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
 .welcome_title {
@@ -25,7 +26,7 @@
     text-align: center;
 }
 
-.register_form {
+.login_form {
     width: 100%;
     padding: 10px 0;
     display: flex;
@@ -66,12 +67,8 @@
 }
 
 @include breakpoint(sm) {
-    .register_container {
-        width: 60%;
-    }
-
-    .welcome {
-        padding-bottom: 40px;
+    .login_container {
+        width: 50%;
     }
 
     .welcome_title {
@@ -85,34 +82,30 @@
 }
 
 @include breakpoint(md) {
-    .register_container {
+    .login_container {
         width: 40%;
         padding: 50px 0;
     }
 
     .welcome_title {
-        font-size: 40px;
+        font-size: 30px;
     }
 }
 
 @include breakpoint(lg) {
-    .register_container {
+    .login_container {
         width: 25%;
         padding: 75px 0;
-    }
-
-    .welcome_title {
-        font-size: 45px;
     }
 }
 
 @include breakpoint(xl) {
-    .register_container {
+    .login_container {
         width: 20%;
         padding: 100px 0;
     }
 
     .welcome_title {
-        font-size: 50px;
+        font-size: 35px;
     }
 }
