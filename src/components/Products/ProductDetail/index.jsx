@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import { getProductDetail } from '../../../services/products';
 import styles from './ProductDetail.module.scss';
 import Loading from '../../Global/Loading';
-import defaultImage from '../../../assets/images/placeholder/default.png';
+import defaultImage from '../../../assets/images/placeholder/product-default.png';
 import 'react-toastify/dist/ReactToastify.css';
 
 const colors = ['Negro', 'Rojo', 'Verde'];

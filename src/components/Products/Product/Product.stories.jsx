@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Product from '.';
-import Image from '../../../assets/images/placeholder/default.png';
+import Image from '../../../assets/images/placeholder/product-default.png';
 
 export default {
   title: 'Product',

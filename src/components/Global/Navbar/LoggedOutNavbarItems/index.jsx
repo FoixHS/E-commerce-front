@@ -14,6 +14,10 @@ const Div = styled.div`
     top: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.5);
+
+    @media(min-width: 768px) {
+        display:none;
+    }
 `;
 
 const Ul = styled.ul`
@@ -172,9 +176,8 @@ function LoggedOutNavbarItems() {
         <li><Link onClick={onClickHandler} to="/login">Ingresar</Link></li>
         <li><Link onClick={onClickHandler} to="/register">Registrarse</Link></li>
         <Button type="button" className="close_menu" onClick={onClickHandler}>
-          Salir
-          {' '}
-          <BsBoxArrowInRight />
+          Volver
+          <BsBoxArrowInRight style={{ marginLeft: '5px' }} />
         </Button>
       </Ul>
     </>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './Product.module.scss';
-import defaultImage from '../../../assets/images/placeholder/default.png';
+import defaultImage from '../../../assets/images/placeholder/product-default.png';
 
 function Product({ product }) {
   const image = product.image ? product.image : defaultImage;
