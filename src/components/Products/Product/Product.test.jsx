@@ -3,11 +3,11 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import Product from '.';
-import Logo from '../../../assets/images/logo/clock.jpeg';
+import Image from '../../../assets/images/placeholder/default.png';
 
 const product = {
   id: 1,
-  image: Logo,
+  image: Image,
   name: 'Test',
   price: '$14.999,99',
   stock: '5',

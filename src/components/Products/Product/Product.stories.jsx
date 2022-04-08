@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Product from '.';
-import Logo from '../../../assets/images/logo/clock.jpeg';
+import Image from '../../../assets/images/placeholder/default.png';
 
 export default {
   title: 'Product',
@@ -9,7 +9,7 @@ export default {
 };
 
 const product = {
-  image: Logo,
+  image: Image,
   name: 'Test',
   price: '$14.999,99',
   stock: '5',

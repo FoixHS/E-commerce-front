@@ -1,16 +1,23 @@
 @import "./../../../assets/styles/variables.scss";
 
 .products {
-    margin: 0 auto;
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     padding: 0 5% 10% 5%;
+    height: 100%;
 
     @include breakpoint(md) {
         padding-bottom: 5%;
     }
+}
+
+.product_no_match {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
 }
 
 .product__container {

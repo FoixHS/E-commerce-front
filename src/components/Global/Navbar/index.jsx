@@ -1,17 +1,15 @@
 import React from 'react';
 import styles from './Navbar.module.scss';
-import Logo from '../../../assets/images/logo/logo.jpeg';
+import Logo from '../../../assets/images/logo/logo.svg';
 
 function Navbar() {
   return (
     <header className={styles.header}>
       <div className={styles.header__content}>
-        <div className={styles.header__logo__container}>
-          <h1>
-            <a href="/">
-              <img className={styles.header__logo__container__img} src={Logo} alt="dh-logo" />
-            </a>
-          </h1>
+        <div className={styles.logo_container}>
+          <a className={styles.logo_link} href="/">
+            <img className={styles.logo_img} src={Logo} alt="dh-logo" />
+          </a>
         </div>
       </div>
     </header>

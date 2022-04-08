@@ -35,7 +35,9 @@
             "required": {
                 "some": [ "nesting", "id"  ]
             }
-        }]
+        }],
+        "import/no-named-as-default": 0,
+        "react/jsx-props-no-spreading": 0
     },
     "overrides": [
         {
