@@ -5,8 +5,7 @@ import { VscThreeBars } from 'react-icons/vsc';
 import { BsBoxArrowInRight } from 'react-icons/bs';
 
 const Div = styled.div`
-    transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
-    transition: transform 0.3s ease-in-out;
+    display: ${({ open }) => (open ? 'block' : 'none')};
     width: 100%;
     height: 100vh;
     z-index: 9999;

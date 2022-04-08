@@ -12,29 +12,22 @@ import 'react-toastify/dist/ReactToastify.css';
 function ProductsList() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage, setProductsPerPage] = useState(20);
   const [query, setQuery] = useState(null);
-  const [totalItems, setTotalItems] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
 
   useEffect(() => {
     const apiFetchProducts = async () => {
       setLoading(true);
       const response = await getProducts(query);
       setProducts(response.data.data);
-      setProductsPerPage(parseInt(response.headers['products-per-page'], 10));
-      setTotalItems(parseInt(response.headers['total-products'], 10));
+      setTotalPages(response.data.pages);
       setLoading(false);
     };
 
     apiFetchProducts();
   }, [query]);
 
-  const indexOfLastProduct = currentPage * productsPerPage;
-  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
-
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber) => setQuery({ page: pageNumber });
   const searchHandler = (params) => setQuery(params);
   return (
     <>
@@ -54,21 +47,20 @@ function ProductsList() {
       { loading ? <Loading /> : (
         <>
           <section className={styles.products}>
-            {currentProducts.length < 1 ? (
+            {products.length < 1 ? (
               <div className={styles.product_no_match}>
                 <MdSearchOff style={{ marginRight: '5px' }} />
                 No se encontraron resultados
               </div>
             )
-              : currentProducts.map((product) => (
+              : products.map((product) => (
                 <article key={product.id} className={styles.product__container}>
                   <Product key={product.id} product={product} />
                 </article>
               ))}
           </section>
           <Pagination
-            itemsPerPage={productsPerPage}
-            totalItems={totalItems}
+            totalPages={totalPages}
             paginate={paginate}
           />
         </>

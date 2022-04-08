@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Pagination.module.scss';
 
-function Pagination({ itemsPerPage, totalItems, paginate }) {
+function Pagination({ totalPages, paginate }) {
   const pageNumbers = [];
 
-  for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i += 1) {
+  for (let i = 1; i <= totalPages; i += 1) {
     pageNumbers.push(i);
   }
 
   return (
-    <nav className={styles.container}>
+    <nav data-testid="paginator" className={styles.container}>
       <ul className={styles.pagination}>
         {pageNumbers.map((number) => (
           <li className={styles.page_item} key={number}>
@@ -25,8 +25,7 @@ function Pagination({ itemsPerPage, totalItems, paginate }) {
 }
 
 Pagination.propTypes = {
-  itemsPerPage: PropTypes.number.isRequired,
-  totalItems: PropTypes.number.isRequired,
+  totalPages: PropTypes.number.isRequired,
   paginate: PropTypes.func.isRequired,
 };
 
