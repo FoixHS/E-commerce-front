@@ -2,18 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './Product.module.scss';
+import defaultImage from '../../../assets/images/placeholder/default.png';
 
 function Product({ product }) {
+  const image = product.image ? product.image : defaultImage;
+  const options = { style: 'currency', currency: 'ARS' };
+  const priceFormat = new Intl.NumberFormat('es-ar', options);
+  const price = priceFormat.format(product.price);
   return (
-    <div className={styles.product}>
-      <div className={styles.product_image_container}>
-        <Link to={`/products/${product.id}`}>
-          <img className={styles.product_image} id="product_image" src={product.image} alt={product.name} />
-        </Link>
-      </div>
+    <div id={styles.transition} className={styles.product}>
+      <Link className={styles.link} to={`/products/${product.id}`}>
+        <div className={styles.product_image} id="product_image" style={{ backgroundImage: `url(${image})` }} />
+      </Link>
       <div>
         <h2 className={styles.product_name}>{product.name}</h2>
-        <span>{product.price}</span>
+        <span>{price}</span>
       </div>
       <button className={styles.product_button} type="button"> Añadir al carrito </button>
     </div>
@@ -22,9 +25,9 @@ function Product({ product }) {
 
 Product.propTypes = {
   product: PropTypes.shape({
-    id: PropTypes.number,
-    name: PropTypes.string,
-    price: PropTypes.string,
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
     image: PropTypes.string,
   }).isRequired,
 };

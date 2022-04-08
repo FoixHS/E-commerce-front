@@ -1,0 +1,35 @@
+@import '../../../assets/styles/variables.scss';
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2% 2%;    
+}
+
+.pagination {
+    display: inline-block;
+    padding: 0;
+}
+
+.page_item {
+    display: inline;
+}
+
+.page_link {
+    color: $black;
+    float: left;
+    padding: 8px 30px;
+    text-decoration: none;
+    background-color: $gallery;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+@include breakpoint(lg) {
+    .page_link {
+        padding: 8px 20px;
+    }
+}

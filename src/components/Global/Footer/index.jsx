@@ -10,7 +10,7 @@ import {
   AiFillLinkedin,
   AiFillFacebook,
 } from 'react-icons/ai';
-import Logo from '../../../assets/images/logo/logo.jpeg';
+import Logo from '../../../assets/images/logo/logo.svg';
 import styles from './Footer.module.scss';
 
 const socialMedia = [

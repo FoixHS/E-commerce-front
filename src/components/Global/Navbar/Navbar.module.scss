@@ -8,7 +8,6 @@ $spacing-lg: 32px;
     background: $black;
     font-family: $oswald-font;
     color: $white;
-    z-index: 1000;
     width: 100%;
     box-shadow: 0 1px 5px $black;
 
@@ -26,9 +25,29 @@ $spacing-lg: 32px;
         align-items: center;
     }
 
-    &__logo__container {
-        &__img {
-            width: 30%;
-        }
+    .logo_container {
+        width: 43%;
+        max-width: 145px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .logo_link {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo_img {
+        width: 100%;
+    }
+}
+
+@include breakpoint(md) {
+    .logo_container {
+        width: 20%;
     }
 }
