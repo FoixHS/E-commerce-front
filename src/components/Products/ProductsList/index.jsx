@@ -17,6 +17,7 @@ function ProductsList() {
 
   useEffect(() => {
     const apiFetchProducts = async () => {
+      window.scrollTo(0, 0);
       setLoading(true);
       const response = await getProducts(query);
       setProducts(response.data.data);
