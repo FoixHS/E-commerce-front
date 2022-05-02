@@ -22,14 +22,9 @@ function SearchFilter({ searchHandler }) {
     searchHandler(null);
   };
 
-  const onMinPriceInputChange = (inputValue) => {
+  const onInputChange = (inputValue, setFunction) => {
     const parseValue = inputValue.replace(/\D/g, '');
-    setMinPriceValue(parseValue);
-  };
-
-  const onMaxPriceInputChange = (inputValue) => {
-    const parseValue = inputValue.replace(/\D/g, '');
-    setMaxPriceValue(parseValue);
+    setFunction(parseValue);
   };
 
   return (
@@ -41,8 +36,8 @@ function SearchFilter({ searchHandler }) {
         </div>
         <div className={styles.search_price}>
           <label htmlFor="product_range_price">Rango de precio</label>
-          <input value={minPriceValue} onInput={(event) => onMinPriceInputChange(event.target.value)} {...register('minPrice')} placeholder="Min" type="text" />
-          <input value={maxPriceValue} onInput={(event) => onMaxPriceInputChange(event.target.value)} {...register('maxPrice')} placeholder="Max" type="text" />
+          <input value={minPriceValue} onInput={(event) => onInputChange(event.target.value, setMinPriceValue)} {...register('minPrice')} placeholder="Min" type="text" />
+          <input value={maxPriceValue} onInput={(event) => onInputChange(event.target.value, setMaxPriceValue)} {...register('maxPrice')} placeholder="Max" type="text" />
         </div>
       </div>
       <div className={styles.buttons}>

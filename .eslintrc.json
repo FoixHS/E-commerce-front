@@ -37,7 +37,8 @@
             }
         }],
         "import/no-named-as-default": 0,
-        "react/jsx-props-no-spreading": 0
+        "react/jsx-props-no-spreading": 0,
+        "no-restricted-syntax": ["error", "FunctionExpression", "WithStatement", "BinaryExpression[operator='in']"]
     },
     "overrides": [
         {

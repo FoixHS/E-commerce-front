@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { BsBoxArrowInRight } from 'react-icons/bs';
+import { FaPowerOff, FaUserAlt, FaSignOutAlt } from 'react-icons/fa';
 import defaultImage from '../../../../assets/images/placeholder/user-default.png';
 
 const ContainerDiv = styled.div`
@@ -75,23 +75,29 @@ const Ul = styled.ul`
   height: 30vh;
 
   li {
-      width: 100%;
-      height: 30%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   a {
-      padding: 15px 0;
-      text-align: center;
-      display: block;
-      width: 100%;
-      height: 100%;
-      font-size: 22px;
-      font-weight: 500;
-      color: white;
-      text-decoration: none;
+    padding: 15px 0;
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 22px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+
+    svg {
+      margin-left: 5px;
+      align-items: center;
+      font-size: 18px;
+    }
   }
 
   a:hover {
@@ -142,13 +148,13 @@ const Button = styled.button`
   padding: 20px 0;
 
   svg {
-      margin-left: 5px;
-      align-items: center;
+    margin-left: 5px;
+    align-items: center;
   }
 
   &:hover {
-      background-color: white;
-      color: #484a4d;
+    background-color: white;
+    color: #484a4d;
   }
 
   @media(min-width: 768px) {
@@ -182,16 +188,26 @@ function LoggedInNavbarItems({ user, logOut }) {
         💰
       </MoneyDiv>
       <ImageDiv open={open} onClick={onClickHandler} />
-      <Div open={open} />
+      <Div open={open} onClick={onClickHandler} />
       <Ul open={open}>
         <div className="user_email">
           { user.email }
         </div>
-        <li><Link onClick={onClickHandler} to="/profile">Perfil</Link></li>
-        <li><Link onClick={logOutHandler} to="/login">Log out</Link></li>
+        <li>
+          <Link onClick={onClickHandler} to="/user/profile">
+            Perfil
+            <FaUserAlt style={{ marginLeft: '5px' }} />
+          </Link>
+        </li>
+        <li>
+          <Link onClick={logOutHandler} to="/login">
+            Log out
+            <FaPowerOff style={{ marginLeft: '5px' }} />
+          </Link>
+        </li>
         <Button type="button" className="close_menu" onClick={onClickHandler}>
           Volver
-          <BsBoxArrowInRight style={{ marginLeft: '5px' }} />
+          <FaSignOutAlt style={{ marginLeft: '5px' }} />
         </Button>
       </Ul>
     </ContainerDiv>

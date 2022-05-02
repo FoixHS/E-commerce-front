@@ -30,3 +30,45 @@ export const getProductDetail = (id) => api.get(`/api/products/${id}`).then((res
     progress: undefined,
   });
 });
+
+export const editProduct = (id, params, token) => api.put(
+  `/api/products/${id}`,
+  params,
+  {
+    headers: {
+      'auth-token': token,
+    },
+  },
+).then((response) => response).catch(() => {
+  const message = 'Algo salió mal 😱';
+  toast.error(message, {
+    position: 'top-center',
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
+});
+
+export const createProduct = (params, token) => api.post(
+  '/api/products',
+  params,
+  {
+    headers: {
+      'auth-token': token,
+    },
+  },
+).then((response) => response).catch(() => {
+  const message = 'Algo salió mal 😱';
+  toast.error(message, {
+    position: 'top-center',
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
+});

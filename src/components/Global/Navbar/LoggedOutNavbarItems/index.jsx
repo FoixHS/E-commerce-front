@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { VscThreeBars } from 'react-icons/vsc';
-import { BsBoxArrowInRight } from 'react-icons/bs';
+import { FaSignOutAlt } from 'react-icons/fa';
 
 const Div = styled.div`
     display: ${({ open }) => (open ? 'block' : 'none')};
@@ -176,7 +176,7 @@ function LoggedOutNavbarItems() {
         <li><Link onClick={onClickHandler} to="/register">Registrarse</Link></li>
         <Button type="button" className="close_menu" onClick={onClickHandler}>
           Volver
-          <BsBoxArrowInRight style={{ marginLeft: '5px' }} />
+          <FaSignOutAlt style={{ marginLeft: '5px' }} />
         </Button>
       </Ul>
     </>

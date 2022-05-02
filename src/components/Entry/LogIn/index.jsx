@@ -1,15 +1,15 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import styles from './Login.module.scss';
 import { login, getUser } from '../../../services/auth';
-import UserContext from '../../../helpers/UserContext';
+import useAuth from '../../../hooks/useAuth';
 import 'react-toastify/dist/ReactToastify.css';
 
 function LogIn() {
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const { setUser } = useContext(UserContext);
+  const { setUser } = useAuth();
   const history = useHistory();
 
   const getUserInfo = async (token) => {

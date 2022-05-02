@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import styles from './Register.module.scss';
 import { createUser } from '../../../services/auth';
 import 'react-toastify/dist/ReactToastify.css';
@@ -11,7 +11,30 @@ function Register() {
   const history = useHistory();
   const onSubmit = async (data) => {
     const response = await createUser(data);
-    if (response.status === 200) history.push('/login');
+    if (response.status === 200) {
+      history.push('/login');
+      const message = 'Usuario creado ✅';
+      toast.success(message, {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    } else {
+      const message = 'Algo salió mal 😱';
+      toast.error(message, {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
   };
   return (
     <>
